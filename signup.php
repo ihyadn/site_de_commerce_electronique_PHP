@@ -98,57 +98,73 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; 
-        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);}
-        .wrapper{ width: 360px; padding: 20px; }
+    body {
+        font: 14px sans-serif;
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .wrapper {
+        width: 360px;
+        padding: 20px;
+    }
     </style>
 </head>
+
 <body>
     <nav class="navbar  navbar-expand-lg navbar-dark bg-dark mb-5">
-		<h1 class="text-white">BOUTIQUE</h1>
-		<div class="mr-auto"></div>
-    <ul class="text-white navbar-nav">
-    	
-      <li class="nav-item mr-5">
-        <a class="nav-link text-white" href="index.php">Home</a>
-      </li>
-         <li class="nav-item">
-        <a class="btn btn-warning" href="login.php" >LogIn</a>
-      </li>
+        <h1 class="text-white">BOUTIQUE</h1>
+        <div class="mr-auto"></div>
+        <ul class="text-white navbar-nav">
 
-    </ul>
-		
-	</nav>
+            <li class="nav-item mr-5">
+                <a class="nav-link text-white" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-warning" href="login.php">LogIn</a>
+            </li>
+
+        </ul>
+
+    </nav>
     <div class="wrapper mx-auto ">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <input type="text" name="username"
+                    class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>  
+            </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                <input type="email" name="email"
+                    class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $email; ?>">
                 <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>  
+            </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
+                <input type="password" name="password"
+                    class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $password; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <input type="password" name="confirm_password"
+                    class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
@@ -157,6 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
-    </div>    
+    </div>
 </body>
+
 </html>

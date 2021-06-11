@@ -87,40 +87,48 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+    body {
+        font: 14px sans-serif;
+    }
+
+    .wrapper {
+        width: 360px;
+        padding: 20px;
+    }
     </style>
 </head>
 <style>
-body{
-    height:100vh;
+body {
+    height: 100vh;
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 </style>
-<body>
-<nav class="navbar  navbar-expand-lg navbar-dark bg-dark mb-5">
-		<h1 class="text-white">BOUTIQUE</h1>
-		<div class="mr-auto"></div>
-    <ul class="text-white navbar-nav">
-    	
-      <li class="nav-item mr-5">
-        <a class="nav-link text-white" href="index.php">Home</a>
-      </li>
-         <li class="nav-item">
-        <a class="btn btn-warning" href="signup.php" >SignUp</a>
-      </li>
 
-    </ul>
-		
-	</nav>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark mb-5">
+        <h1 class="text-white">BOUTIQUE</h1>
+        <div class="mr-auto"></div>
+        <ul class="text-white navbar-nav">
+
+            <li class="nav-item mr-5">
+                <a class="nav-link text-white" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-warning" href="signup.php">SignUp</a>
+            </li>
+
+        </ul>
+
+    </nav>
     <div class="wrapper mx-auto  rounded">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
@@ -134,12 +142,15 @@ body{
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group mb-5">
                 <label>email</label>
-                <input type="text" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+                <input type="text" name="email"
+                    class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
+                    value="<?php echo $email; ?>">
                 <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>    
+            </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <input type="password" name="password"
+                    class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
@@ -149,4 +160,5 @@ body{
         </form>
     </div>
 </body>
+
 </html>
